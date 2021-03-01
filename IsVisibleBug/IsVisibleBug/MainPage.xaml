@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IsVisibleBug.MainPage">
+  <Grid RowDefinitions="*,*">
+    <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+      <Button Text="Hide Container" Command="{Binding HideContainer}" />
+      <Button Text="Long Text" Command="{Binding MakeTextLong}" Grid.Column="1" />
+      <Button Text="Show Container" Command="{Binding ShowContainer}" Grid.Row="1" />
+      <Button Text="Short Text" Command="{Binding MakeTextShort}" Grid.Row="1" Grid.Column="1" />
+    </Grid>
+    <Grid IsVisible="{Binding ContainerVisible}" Grid.Row="1">
+      <Label HorizontalOptions="Center" VerticalOptions="Center"
+             Text="{Binding TheText}"
+             LineBreakMode="TailTruncation"/>
+    </Grid>
+  </Grid>
+</ContentPage>
